@@ -8,11 +8,6 @@ public class DiscreteDistribution {
             sums[i] = sums[i - 1] + Integer.parseInt(args[i]);
         }
 
-        for (int x: sums) {
-            System.out.print(x + ", ");
-        }
-        System.out.println();
-
         int r;
         int idx; 
 
