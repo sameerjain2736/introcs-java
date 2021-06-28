@@ -6,9 +6,7 @@ public class Birthday {
         int[] countArr = new int[trials];
         for (int i = 0; i < trials; i++) {
             countArr[i] = experiment(n);
-            //System.out.print(countArr[i] + " ");
         }
-        //System.out.println();
 
         int[] nArr = new int[n];
         for (int i = 0; i < n; i++) {
@@ -19,12 +17,6 @@ public class Birthday {
             }
             nArr[i] = count;
         }
-
-        /*
-        for (int x: nArr)
-            System.out.print(x + " ");
-        System.out.println();
-        */
 
         float frac = 0;
         for (int i = 0; i < nArr.length; i++) {
