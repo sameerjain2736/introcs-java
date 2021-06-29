@@ -18,7 +18,7 @@ public class RectangularMatrixDotProduct {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = (int) (Math.random() * 10);
-                System.out.print(a[i][j] + ", ");
+                System.out.print(a[i][j] + "\t");
             }
             System.out.println();
         }
@@ -27,7 +27,7 @@ public class RectangularMatrixDotProduct {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < q; j++) {
                 b[i][j] = (int) (Math.random() * 10);
-                System.out.print(b[i][j] + ", ");
+                System.out.print(b[i][j] + "\t");
             }
             System.out.println();
         }
@@ -38,7 +38,7 @@ public class RectangularMatrixDotProduct {
                 for (int k = 0; k < n; k++) {
                     c[i][j] += a[i][k]*b[k][j];
                 }
-                System.out.print(c[i][j] + ", ");
+                System.out.print(c[i][j] + "\t");
             }
             System.out.println();
         }
