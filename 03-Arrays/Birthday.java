@@ -1,44 +1,33 @@
-public class Birthday { 
+public class Birthday {
     public static void main (String[] args) {
         int n = Integer.parseInt(args[0]);
         int trials = Integer.parseInt(args[1]);
+        int[] countArr = new int[n + 2];
 
-        int[] countArr = new int[trials];
         for (int i = 0; i < trials; i++) {
-            countArr[i] = experiment(n);
-        }
-
-        int[] nArr = new int[n];
-        for (int i = 0; i < n; i++) {
+            boolean doesShare = false;
             int count = 0;
-            for (int j = 0; j < countArr.length; j++) {
-                if (countArr[j] == i + 1)
+            boolean[] bdayArr = new boolean[n];
+
+            while(!doesShare) {
+                int idx = (int)(Math.random() * n);
+                if (bdayArr[idx] == true) {
+                    doesShare = true;
+                    countArr[count]++;
+                }
+                else {
+                    bdayArr[idx] = true;
                     count++;
+                }
             }
-            nArr[i] = count;
         }
 
-        float frac = 0;
-        for (int i = 0; i < nArr.length; i++) {
-            frac += (float)nArr[i]/trials;
-            System.out.println((i+1) + "\t" + nArr[i] + "\t" + frac);
-            if (frac > 0.5)
-                break;
+        double frac = 0.0;
+        int i = 0;
+        while (frac < 0.5) {
+            frac += (double) countArr[i] /trials;
+            System.out.print(i + 1 + "\t" + (int) countArr[i] + "\t" + frac + "\n");
+            i++;
         }
-    }
-
-    static int experiment (int n) {
-        int count = 0;
-        int[] arr = new int[n];
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * n);
-            for (int j = 0; j < i; j++) {
-                if (arr[j] == arr[i])
-                    return (count + 1);
-            }
-            count++;
-        }
-        return (count + 1);
     }
 }
