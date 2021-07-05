@@ -1,6 +1,6 @@
 public class Test {
     public static void main (String[] args) {
-        int n = 100;
+        int n = 40;
         StdDraw.setXscale(0, n);
         StdDraw.setYscale(0, n);
         for (int i = 0; i <= n; i++) {
