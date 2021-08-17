@@ -7,23 +7,12 @@ public class MaximumSquareSubmatrix {
         int maxVal = 0;
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
-                if (i == 0 || j == 0) {
-                    if (a[i][j] == 1) b[i][j] = 1;
-                }
-                else if (a[i][j] == 1) {
-                    if(b[i][j-1] != 0 && b[i-1][j-1] != 0 && b[i-1][j] != 0) {
-                        if (b[i][j-1] == b[i-1][j-1] && b[i-1][j-1] == b[i-1][j]) {
-                            b[i][j] = b[i][j-1] + 1;
-                        }
-                        else {
-                            b[i][j] = 1 + Math.min(Math.min(b[i][j-1], b[i-1][j-1]), Math.min(b[i-1][j-1], b[i-1][j]));
-                        }
-                    }
-                    else {
-                        b[i][j] = 1;
-                    }
-                }
-                if (b[i][j] > maxVal) maxVal = b[i][j];
+                if ((i == 0 || j == 0) && a[i][j] == 1) 
+                    b[i][j] = 1;
+                else if (a[i][j] == 1) 
+                    b[i][j] = 1 + Math.min(Math.min(b[i][j-1], b[i-1][j-1]), Math.min(b[i-1][j-1], b[i-1][j]));
+                if (b[i][j] > maxVal) 
+                    maxVal = b[i][j];
             }
         }
         return maxVal;
