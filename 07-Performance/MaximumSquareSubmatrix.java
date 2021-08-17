@@ -1,5 +1,5 @@
 public class MaximumSquareSubmatrix {
-
+    
     // Returns the size of the largest contiguous square submatrix
     // of a[][] containing only 1s.
     public static int[][] size(int[][] a) {
@@ -33,20 +33,19 @@ public class MaximumSquareSubmatrix {
     // and prints the size of the largest contiguous square submatrix
     // containing only 1s.
     public static void main(String[] args) {
-        int[][] arr = {{0, 1, 1, 0, 1, 1},
-                       {1, 1, 0, 1, 0, 1},
-                       {0, 1, 1, 1, 0, 1},
-                       {1, 1, 1, 1, 1, 0},
-                       {1, 1, 1, 1, 1, 1},
-                       {0, 0, 0, 0, 1, 1}}; 
-
-        int[][] brr = size(arr);
-        for (int i = 0; i < brr.length; i++) {
-            for (int j = 0; j < brr[i].length; j++) {
-                System.out.printf("%d%s", brr[i][j], " ");
+        int m = StdIn.readInt();
+        int[][] a = new int[m][m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                a[i][j] = StdIn.readInt();
+            }
+        }
+        int[][] b = size(a);
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                System.out.printf("%d%s", b[i][j], " ");
             }
             System.out.println();
         }
     }
-
 }
