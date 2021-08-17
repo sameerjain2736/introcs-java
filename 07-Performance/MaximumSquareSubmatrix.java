@@ -1,8 +1,8 @@
 public class MaximumSquareSubmatrix {
-    
+
     // Returns the size of the largest contiguous square submatrix
     // of a[][] containing only 1s.
-    public static int[][] size(int[][] a) {
+    public static int size(int[][] a) {
         int[][] b = new int[a.length][a[0].length];
         int maxVal = 0;
         for (int i = 0; i < a.length; i++) {
@@ -26,7 +26,7 @@ public class MaximumSquareSubmatrix {
                 if (b[i][j] > maxVal) maxVal = b[i][j];
             }
         }
-        return b;
+        return maxVal;
     }
 
     // Reads an n-by-n matrix of 0s and 1s from standard input
@@ -40,12 +40,6 @@ public class MaximumSquareSubmatrix {
                 a[i][j] = StdIn.readInt();
             }
         }
-        int[][] b = size(a);
-        for (int i = 0; i < b.length; i++) {
-            for (int j = 0; j < b[i].length; j++) {
-                System.out.printf("%d%s", b[i][j], " ");
-            }
-            System.out.println();
-        }
+        System.out.println(size(a));
     }
 }
