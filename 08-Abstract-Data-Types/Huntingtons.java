@@ -32,7 +32,7 @@ public class Huntingtons {
     // Returns one of these diagnoses corresponding to the maximum number of repeats:
     // "not human", "normal", "high risk", or "Huntington's".
     public static String diagnose(int maxRepeats) {
-        if (maxRepeats <= 9 || maxRepeats >= 181) return "not numan";
+        if (maxRepeats <= 9 || maxRepeats >= 181) return "not human";
         else if (maxRepeats >= 10 && maxRepeats <= 35) return "normal";
         else if (maxRepeats >= 36 && maxRepeats <= 39) return "high risk";
         else return "Huntington's";
