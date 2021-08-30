@@ -105,7 +105,7 @@ public class KernelFilter {
                 if (blueTotal < 0) blueTotal = 0;
                 if (blueTotal > 255) blueTotal = 255;
 
-                Color output = new Color((int) redTotal, (int) greenTotal, (int) blueTotal);
+                Color output = new Color((int) Math.round(redTotal), (int) Math.round(greenTotal), (int) Math.round(blueTotal));
                 newPic.set(col, row, output);
             }
         }
